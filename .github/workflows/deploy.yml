@@ -1,16 +1,13 @@
-name: Deploy Portfolio to GitHub Pages
+name: CI Checks
 
 on:
   push:
     branches: [ main ]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -25,21 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build site
+      - name: Run linter / typecheck (if available)
+        run: npm run lint --if-present
+
+      - name: Build site (Check for bugs/errors)
         run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
