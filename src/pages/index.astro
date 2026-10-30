@@ -73,6 +73,12 @@ const projects = [
     githubUrl: "https://github.com/isidoraisidora/image-crawler"
   },
   {
+    title: "DocuMind: RAG Question-Answering System",
+    description: "Built an end-to-end Retrieval-Augmented Generation application that lets users ask questions over their own documents and receive grounded, source-cited answers. Developed the backend as a FastAPI service that handles document ingestion, chunking and embedding, stores vectors in pgvector, and retrieves relevant passages to pass to an LLM for answer generation. Containerized the full stack (API, vector database, frontend) with Docker and Docker Compose, automated testing, image builds and delivery with GitHub Actions, and deployed the system on Kubernetes using Deployments, Services, Ingress, ConfigMaps, Secrets and persistent storage.",
+    tags: ["Python", "FastAPI", "RAG", "LLM", "Docker", "Kubernetes", "GitHub Actions"],
+    githubUrl: "https://github.com/isidoraisidora/documind"
+  },
+  {
     title: "Movie Recommendation Model",
     description: "Developed an enhanced Content-Based Recommender System using Python, Pandas, and scikit-learn. Engineered text features—overviews, cast, directors, and keywords—from the TMDB 5000 dataset into high-dimensional vectors via CountVectorizer and Cosine Similarity to generate precise film recommendations.",
     tags: ["Python", "Pandas", "scikit-learn"],
@@ -88,8 +94,8 @@ const projects = [
   },
   {
     title: "Skinventory App",
-    description: "Built a multi-project ASP.NET Core (.NET 10) web API for skincare inventory management and product reaction tracking. Integrates a daily Quartz.NET ETL pipeline querying Open Beauty Facts to seed product and ingredient data, custom JWT authentication, an asynchronous System.Threading.Channels queue for email reminders, and PAO-aware expiration tracking.",
-    tags: [".NET Core", "C#", "SQLite"],
+    description: "Built a multi-project ASP.NET Core (.NET 10) web API for skincare inventory management and product reaction tracking. Integrates a daily Quartz.NET ETL pipeline querying Open Beauty Facts to seed product and ingredient data, custom JWT authentication, an asynchronous System.Threading.Channels queue for email reminders, and PAO-aware expiration tracking. Containerized the application with a multi-stage Docker build and a persistent volume for the SQLite database, and automated testing, image builds and publishing to a container registry with GitHub Actions.",
+    tags: [".NET Core", "C#", "SQLite", "Docker", "GitHub Actions", "CI/CD"],
     githubUrl: "https://github.com/isidoraisidora/skinventory-app"
   },
   {
